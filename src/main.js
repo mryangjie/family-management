@@ -12,10 +12,10 @@ import './components/installComponents.js'
 Vue.config.productionTip = false
 Vue.use(Element)
 
-import VueParticles from 'vue-particles'  
-Vue.use(VueParticles)  
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
-localStorage["token"]='test'
+// localStorage["token"]='test'
 
 /* eslint-disable no-new */
 window.rootApp = new Vue({

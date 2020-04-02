@@ -5,7 +5,12 @@ import {
     GET_USERINFO_LOGIN,
     GET_PROVINCES,
     GET_CITIES,
-    GET_AREAS
+    GET_AREAS,
+
+    GET_FIRSTINDUSTRY,
+    GET_SECONDINDUSTRY,
+    GET_THIRDINDUSTRY,
+    GET_FOURINDUSTRY
 
 } from './mutation-types.js'
 
@@ -16,7 +21,12 @@ const state = {
     userToken: '', 
     provincesList: [],
     citiesList: [],
-    areasList: []     
+    areasList: [],
+    firstIndustryList:[],
+    secondIndustryList:[],
+    thirstIndustryList:[],
+    fourIndustryList:[],
+         
 }
 
 //全局mutions
@@ -39,6 +49,18 @@ const mutations = {
     },
     [GET_AREAS](state,data){
         state.areasList = data || []
+    },
+    [GET_FIRSTINDUSTRY](state,data){
+        state.firstIndustryList = data || []
+    },
+    [GET_SECONDINDUSTRY](state,data){
+        state.secondIndustryList = data || []
+    },
+    [GET_THIRDINDUSTRY](state,data){
+        state.thirstIndustryList = data || []
+    },
+    [GET_FOURINDUSTRY](state,data){
+        state.fourIndustryList = data || []
     }
 
 }

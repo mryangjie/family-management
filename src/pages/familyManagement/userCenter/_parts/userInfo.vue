@@ -1,16 +1,16 @@
 <template>
     <div class="personal-profile-wrapper common-wrapper">
-        <p>1964年生,上海人,1982年9月参加工作,1985年5月加入中国共产党,北京师范大学哲学系政教专业和经济与工商管理学院国际经济专业毕业,在职研究生学历,教育学学士、经济学硕士学位。</p>
-        <p>1982年9月至1986年9月为河北省安国县中学教师、文教局干部。</p>
-        <p>1986年9月至1990年7月在北京师范大学哲学系本科学习。</p>
-        <p>1990年7月至2013年5月在中宣部工作,先后任办公厅信息处副主任科员、主任科员,政研室调研二处副处长、调研一处副处长、处长,政研室助理巡视员,2002年5月起先后任政研室副主任、舆情信息中心主任、舆情信息局副局长,2005年10月至2009年10月先后任舆情信息局巡视员、副局长,局长,2009年10月任理论局局长、马克思主义理论研究和建设工程办公室主任</p>
+        {{userInformation.user_introduction}}
     </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import { mapGetters, mapActions } from "vuex";
+export default {
+    computed: {
+        ...mapGetters(['userInformation'])
+    },
+}
 </script>
 
 <style lang="scss" scoped>

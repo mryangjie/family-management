@@ -14,7 +14,8 @@ import {
     FamilyOverview,
     LineageBook,
     FamilyHistory,
-    UserCenter
+    UserCenter,
+    SetUp
 
 } from './router-components';
 
@@ -26,7 +27,7 @@ const routes = [{
                 path: '/familyOverview',
                 component: FamilyOverview,
                 name: 'familyOverview',
-                meta: { 
+                meta: {
                     keepAlive: true,
                     requireAuth: true,
                 }
@@ -35,7 +36,7 @@ const routes = [{
                 path: '/lineageBook',
                 component: LineageBook,
                 name: 'lineageBook',
-                meta: { 
+                meta: {
                     keepAlive: true,
                     requireAuth: true,
                 }
@@ -44,7 +45,7 @@ const routes = [{
                 path: '/familyHistory',
                 component: FamilyHistory,
                 name: 'familyHistory',
-                meta: { 
+                meta: {
                     keepAlive: true,
                     requireAuth: true,
                 }
@@ -53,10 +54,19 @@ const routes = [{
                 path: '/userCenter',
                 component: UserCenter,
                 name: 'userCenter',
-                meta: { 
+                meta: {
                     keepAlive: true,
                     requireAuth: true,
                 }
+            },
+            {
+              path: '/setUp',
+              component: SetUp,
+              name: 'setUp',
+              meta: {
+                keepAlive: true,
+                requireAuth: true,
+              }
             }
         ]
     },
@@ -113,5 +123,10 @@ router.beforeEach((to, from, next) => {
         next();
     }
 })
+
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+};
 
 export default router

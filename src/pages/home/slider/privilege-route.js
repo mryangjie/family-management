@@ -1,9 +1,10 @@
 export const privilegeRoute = {
-    
+
     "jiazuzonglan": "/familyOverview",
     "shixibiao": "/lineageBook",
     "jiachuan": "/familyHistory",
     "gerenzhongxin": "/userCenter",
+    "shezhi": "/setUp",
 }
 
 export const privilegeIcon = {
@@ -11,4 +12,5 @@ export const privilegeIcon = {
     'shixibiao': 'iconfont family-icon-fenzhijigou',
     'jiachuan': 'iconfont family-icon-ziyuanxhdpi',
     'gerenzhongxin': 'iconfont family-icon-gerenzhongxin',
+    'shezhi': 'iconfont family-icon-shezhi',
 }

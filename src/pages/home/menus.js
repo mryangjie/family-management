@@ -24,6 +24,11 @@ export const menus = {
                 "resourcesName": "个人中心",
                 "resourcesUrl": "gerenzhongxin",
             },
+            {
+              "resKey": "shezhi",
+              "resourcesName": "设置",
+              "resourcesUrl": "shezhi",
+            },
         ]
     }
 }

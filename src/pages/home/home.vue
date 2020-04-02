@@ -12,6 +12,12 @@
                 leftMenus: []
             }
         },
+        computed: {
+            
+        },
+        methods: {
+
+        },
         async created() {
             this.leftMenus = menus.data.suns 
          

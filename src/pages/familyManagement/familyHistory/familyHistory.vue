@@ -1,5 +1,5 @@
 <template>
-    <div class="page-view">
+    <div class="page-view familyHistory-page">
         家传
     </div>
 </template>
@@ -11,5 +11,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.familyHistory-page{
+    
+}
 </style>

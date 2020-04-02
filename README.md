@@ -66,14 +66,17 @@ npm run build
 
 ## 开发规范
 1. 组件化开发模块
-2. let/const代替var 使用箭头函数代替function等es6，
-3. 组件以驼峰命名 羊肉串方式使用
+2. 组件以驼峰命名 羊肉串方式使用
 ```javascript
 
     import userInfo from "./_parts/userInfo";
 
     <user-info></user-info>
 ```
+3. 组件样式写在当前组件内 公用样式写在src/scss/main.scss
+4. 页面加类page-view和当前页名称 class='page-view familyOverview-page'
+5. scss文件需包在当前页类下
+6. let/const代替var 使用箭头函数代替function等es6，
 
 
 

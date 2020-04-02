@@ -13,10 +13,10 @@
                 <div class="m-right-content">
                     <el-form class="reset-form-input reset-form-required" :model="loginForm" :rules="rules" ref="loginForm">
                         <el-form-item  label="手机号" prop="phoneCode">
-                            <el-input v-model="loginForm.phoneCode" placeholder="请输入手机号"></el-input>
+                            <el-input v-model.trim="loginForm.phoneCode" placeholder="请输入手机号"></el-input>
                         </el-form-item>
                          <el-form-item  label="密码" prop="password">
-                            <el-input v-model="loginForm.password"  placeholder="请输入密码" show-password></el-input>
+                            <el-input v-model.trim="loginForm.password"  placeholder="请输入密码" show-password></el-input>
                         </el-form-item>
                         <div class="submit-line">
                             <el-button class="submit-btn" type="primary" @click="submitForm('loginForm')">登 陆</el-button>
@@ -82,7 +82,6 @@ import mixinConfig from '@/mixins/mixin.config.js'
                                     message:'登陆成功正在进入家族管理系统',
                                     type:'success'
                                 })
-
                                 this.$router.push({name:'familyOverview',params:{code:res.code} })
 
                             }else{

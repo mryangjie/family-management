@@ -1,0 +1,150 @@
+
+.familyOverview-page{
+    .el-dialog{
+        min-width: 768px;
+    }
+    .select-pop-wrapper{
+        min-width: 935px;
+    }
+    .dialog-main{
+        .dialog-main-titles{
+            color: #000;
+            font-size: 24px;
+            font-weight: normal;
+            text-align: center;
+        }
+        .dialog-main-bg{
+            width: 360px;
+            margin: 40px auto 0;
+            border-radius: 3px;
+            padding: 20px;
+            -webkit-box-shadow: 0px 0px 8px #cacaca;
+            box-shadow: 0px 0px 8px #cacaca;
+            .dialog-main-input /deep/ .el-input__inner{
+                background-color: transparent!important;
+            }
+            .creat-family-btn{
+                margin: 0 auto;
+                display: block;
+            }
+            .dialog-main-txt{
+                text-align: left;
+            }
+        }
+        .dialog-family-bg{
+            width: 650px;
+            .join-family{
+                margin-top: 50px;
+                margin-bottom: 30px;
+                .join-family-left{
+                    .dialog-main-txt{
+                        P{
+                            margin-bottom: 36px;
+                        }
+                    }
+                }
+                .join-family-right{
+                    margin-top: 20px;
+                    padding-left: 40px;
+                    .join-family-rightCon{
+                        overflow: hidden;
+                        img{
+                            width: 50px;
+                            height: auto;
+                            border-radius: 50%;
+                            float: left;
+                        }
+                        .join-family-rightWirte{
+                            float: left;
+                            margin-left: 20px;
+                            p{margin: 0}
+                            P:nth-child(1){
+                                font-size: 20px;
+                                color: #000;
+                                margin-bottom: 5px;
+                            }
+                            P:nth-child(2){
+                              color: #1781B5;
+                            }
+                        }
+                    }
+                    .join-family-rightTip{
+                      color: #000;
+                    }
+                }
+            }
+        }
+        // .select-family-page{
+        //     position: absolute;
+        //     top: 400px;
+        //     left: 49%;
+        //     color: #1781B5;
+        // }
+        .select-family-bg{
+            width: 100%;
+            // background: initial;
+            // left: 10%;
+            // top: 130px;
+            .select-family{
+                .el-col{
+                    .select-family-con{
+                        // border: #fff solid 1px;
+                        width: 100%;
+                        height: 200px;
+                        background: #fff;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        .select-family-top{
+                            overflow: hidden;
+                            // width: 80%;
+                            margin-left: 10%;
+                            padding-top: 25px;
+                            img{
+                                width: 50px;
+                                height: auto;
+                                border-radius: 50%;
+                                float: left;
+                            }
+                            .select-family-wirte{
+                                float: left;
+                                margin-left: 20px;
+                                p{
+                                    margin: 0
+                                }
+                                P:nth-child(1){
+                                    font-size: 20px;
+                                    color: #000;
+                                    // margin-bottom:3px
+                                }
+                                P:nth-child(2){
+                                    color: #1781B5;
+                                }
+                            }
+                        }
+                        .select-family-synopsis{
+                            width: 80%;
+                            margin-left: 10%;
+                            margin-top: 15px;
+                            line-height: 22px;
+                            display: -webkit-box;
+                            -webkit-line-clamp:2;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-box-orient: vertical;
+                            height: 42px;
+                        }
+                        .select-family-join{
+                            float: right;
+                            margin-right: 10%;
+                            margin-top: 10px;
+                            font-weight: bold;
+                            color: #1BB1E6;
+                            font-size: 13px;
+                            // font-family: 'SourceHanSerifCN-Medium-6';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

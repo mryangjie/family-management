@@ -12,3 +12,4 @@ export const FamilyOverview = resolve => require(['../pages/familyManagement/fam
 export const LineageBook = resolve => require(['../pages/familyManagement/lineageBook/lineageBook.vue'], resolve)
 export const FamilyHistory = resolve => require(['../pages/familyManagement/familyHistory/familyHistory.vue'], resolve)
 export const UserCenter = resolve => require(['../pages/familyManagement/userCenter/userCenter.vue'], resolve)
+export const SetUp = resolve => require(['../pages/familyManagement/setUp/setUp.vue'], resolve)

@@ -1,63 +1,55 @@
 <template>
-    <div class="page-view">
-        <TreeChart :json="treeData" id="6"></TreeChart>
+    <div class="page-view lineageBook-page">
+        <!-- <el-button @click="showInfoPop">展示</el-button> -->
+        
+        <line-tree @send-node='nodeDetail'></line-tree>
+        <el-dialog class="need-dialog"
+            top='0vh'
+            :visible.sync="dialogVisible">
+            <user-information></user-information>
+        </el-dialog>
     </div>
 </template>
 
-
-
 <script>
-    import TreeChart from '@/components/Treechart/tree.vue'
-    export default {
-        components: {
-            TreeChart
-        },
-        data(){
-            return {
-                 treeData: {
-                    partnerName: '刘振中',
-                    proportionShares: '100',
-                    partnerType: 2,
-                    id: 1,
-                    childers: [{
-                    partnerName: '刘振中',
-                    proportionShares: '50',
-                    partnerType: 1,
-                    id: 2,
-                    partnerCode: 1,
-                      childers:[
-                          {
-                    partnerName: '刘振中',
-                    proportionShares: '50',
-                    partnerType: 1,
-                    id: 2,
-                    partnerCode: 1
-                    },
-                      ]
-                    }, {
-                    partnerName: '刘振中',
-                    proportionShares: '20',
-                    partnerType: 1,
-                    id: 4,
-                    partnerCode: 1
-                    }, {
-                    partnerName: '刘振中',
-                    proportionShares: '20',
-                    partnerType: 2,
-                    id: 5,
-                    partnerCode: 1
-                    }, {
-                    partnerName: '刘振中',
-                    proportionShares: '10',
-                    partnerType: 3,
-                    id: 6,
-                    partnerCode: 1
-                    }]
-                }
-            }
+import userInformation from '../_parts/userInformation'
+import lineTree from './_parts/lineTree'
+export default {
+    data() {
+        return {
+            dialogVisible: false
         }
-    }
+    },
+    components: {
+        userInformation,
+        lineTree
+    },
+    methods: {
+        showInfoPop() {
+            this.dialogVisible = true
+        },
+        nodeDetail(){
+            this.dialogVisible = true;
+        }
+    },
+}
 </script>
 
 <style lang="scss">
+.lineageBook-page {
+    font-size: 14px;
+    .need-dialog {
+        overflow: hidden;
+        .el-dialog {
+            margin-top: 0;
+            position: absolute;
+            right: 0;
+            width: 510px;
+            height: 100%;
+        }
+        .el-dialog__body{
+            padding-top: 0
+        }
+    }
+}
 </style>

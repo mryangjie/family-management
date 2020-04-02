@@ -21,14 +21,14 @@ axios.interceptors.response.use(
     switch (response.data.code) {
         case 401: // 401 未登录跳到登录页
             delete localStorage['token'];
-            Message.error({ message: '登录失效 即将返回登录页', duration: 3000 });
-            setTimeout( ()=>{
+            Message.error({ message: '请重新登陆', duration: 3000 });
+            // setTimeout( ()=>{
                 router.currentRoute.path !== 'login' &&  
                 router.replace({
                     path: 'login',
                     query: { redirect: router.currentRoute.path },
                 })
-            },3000)
+            // },3000)
     }
     // return response
     return Promise.resolve(response);    
