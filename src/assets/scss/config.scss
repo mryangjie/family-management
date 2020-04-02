@@ -1,0 +1,92 @@
+$body_bc_color: #fafafa; //主背景颜色
+
+$left_active_color: #1781b5; // 菜单激活颜色
+$left_bc_color: #f2f4f4; //菜单激活背景颜色
+
+$submit_btn_color: #1781b5; //按钮颜色
+$submit_btn_color_active: #1893d0; //按钮激活颜色
+
+
+
+
+// 绝对定位百分百的窗口
+@mixin absWin {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	overflow: hidden;
+}
+
+// 	flex兼容
+@mixin flexbox {
+  	display: flex;         /* 新版本语法: Opera 12.1, Firefox 22+ */
+  	display: -webkit-box;  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  	display: -moz-box;     /* 老版本语法: Firefox (buggy) */
+  	display: -ms-flexbox;  /* 混合版本语法: IE 10 */
+  	display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+}
+
+
+//垂直方向
+@mixin flexHoriReverse{
+	-webkit-box-orient:vertical;  /*Safari、Opera 以及 Chrome 支持替代的 -webkit-box-orient 属性。*/
+	-moz-box-orient:vertical;  /*Firefox 支持替代的 -moz-box-orient 属性。*/
+	-webkit-box-direction:normal;
+	-moz-box-direction:normal;
+	flex-direction:column;
+	-webkit-flex-direction:column;
+}
+
+// 水平平均分布
+@mixin flexAverage{
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	box-pack:justify;
+	-webkit-box-pack:justify;
+	-moz-box-pack:justify;
+}
+
+
+// 水平居中
+@mixin flexCenterHori{
+	justify-content:center;
+	-webkit-justify-content:center;
+	box-pack:center;
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+}
+
+
+// 垂直+居中
+@mixin flexVeriAverage {
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-moz-box-direction:normal;
+	align-items:center;
+	-webkit-align-items:center;
+	box-align:center;
+	-moz-box-align:center;
+	-webkit-box-align:center;
+}
+
+
+// flex子元素自适应撑满
+@mixin flexAuto {
+	flex: 1;
+	-webkit-flex: 1;
+	box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+}
+
+// 图片路径
+@function path($name) {
+	@return "@/assets/images/" + $name;
+}
+
+
+

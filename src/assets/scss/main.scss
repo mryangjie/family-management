@@ -1,0 +1,283 @@
+/*
+ * @Description:
+ * @Autor: yangjie
+ * @Date: 2019-11-18 09:12:56
+ * @LastEditors: yangjie
+ * @LastEditTime: 2019-11-21 17:59:39
+ */
+
+@import './normalize.scss';
+@import './config.scss';
+body,
+html {
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: auto; //hidden;
+    color: #1f2d3d;
+    min-width: 1360px;
+    // font-family: cursive!important;
+}
+
+@font-face {
+    font-family: 'SourceHanSerifCN-Bold-2';
+    src: url('../fonts/SourceHanSerifCN-Bold-2.otf');
+}
+
+@font-face {
+    font-family: 'SourceHanSerifCN-Medium-6';
+    src: url('../fonts/SourceHanSerifCN-Medium-6.otf');
+}
+
+.page-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/**
+ * @description:  middle登录框
+ * @param {type}
+ * @author: yangjie
+ */
+
+.middle-wrapper {
+    @include flexbox;
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -250px;
+    box-shadow: 0 2px 8px #D4DFE9;
+    border-radius: 5px;
+    .middle-wrapper-left {
+        position: relative;
+        width: 300px;
+        background: url('../images/img_left_bg.png') 100% 100%;
+        .img-t1 {
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            background: url('../images/img_left_t1.png') 100%;
+            background-size: cover;
+            right: 40px;
+            ;
+        }
+        .img-t2 {
+            width: 100px;
+            height: 300px;
+            position: absolute;
+            background: url('../images/img_left_t2.png') 100%;
+            background-size: cover;
+            left: 40px;
+            top: 140px;
+        }
+    }
+    .middle-wrapper-right {
+        @include flexAuto;
+        padding: 50px 50px 0 50px;
+        .m-right-tit {
+            text-align: center;
+        }
+        .m-right-content {
+            padding: 55px 30px 0;
+            overflow: hidden;
+            .submit-btn {
+                width: 100%;
+                margin: 0 auto;
+                background-color: $submit_btn_color;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                &:hover {
+                    background-color: $submit_btn_color_active;
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * @description: Form样式重置
+ * @param {type}
+ * @author: yangjie
+ */
+
+.reset-form-input {
+    .el-input__inner {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        padding-bottom: 0;
+        padding-top: 10px;
+        font-size: 12px;
+        padding: 0;
+    }
+    .el-form-item__label {
+        height: 20px;
+        line-height: 20px;
+    }
+}
+
+.reset-form-label {
+    .el-form-item__label {
+        display: none
+    }
+}
+
+.reset-form-required {
+    .el-form-item__label:before {
+        display: none;
+    }
+}
+
+
+/**
+ * @description: wrapper家族管理框
+ * @param {type}
+ * @author: yangjie
+ */
+
+.home-wrapper {
+    width: 100%;
+    height: 100%;
+    @include flexbox;
+    position: relative;
+    background-color: $body_bc_color;
+    .home-wrapper-slider {
+        position: relative;
+        width: 240px;
+        box-shadow: 2px 0 8px #e8e8e8;
+        background-color: $body_bc_color;
+        padding: 15px 0;
+        font-family: 'SourceHanSerifCN-Medium-6';
+        .el-menu {
+            background-color: $body_bc_color;
+            border-right: 0;
+        }
+        .el-menu-item {
+            font-size: 16px;
+            position: relative;
+        }
+        .el-menu-item:hover,
+        .el-menu-item.is-active {
+            color: $left_active_color;
+            background-color: $left_bc_color;
+        }
+        .el-menu-item:hover {
+            background-color: #f8f8f8;
+            ;
+        }
+        .el-menu-item.is-active::before {
+            position: absolute;
+            left: 0;
+            content: '';
+            height: 100%;
+            width: 5px;
+            background: $left_active_color;
+        }
+        .online-show {
+            padding: 20px 15px 30px;
+            @include flexbox;
+            position: relative;
+            .online-img {
+                margin-right: 15px;
+                @include flexbox;
+                @include flexVeriAverage;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+            .online-info {
+                @include flexbox;
+                @include flexAuto;
+                @include flexVeriAverage;
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+                .info-surname {
+                    font-size: 18px;
+                    font-family: 'SourceHanSerifCN-Bold-2';
+                }
+                .info-no {
+                    font-size: 12px;
+                    color: $left_active_color;
+                    margin-top: 5px;
+                    ;
+                }
+            }
+            .online-icon-arrow {
+                position: absolute;
+                right: 20px;
+                top: 40px;
+            }
+        }
+        .online-control {
+            @include flexbox;
+            width: 100%;
+            position: absolute;
+            bottom: 30px;
+            padding-left: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            >div {
+                width: 50%;
+                text-align: center;
+            }
+            .online-img {
+                @include flexbox;
+                @include flexVeriAverage;
+                .online-img-user {
+                    margin-right: 5px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .online-ctrl {
+                @include flexbox;
+                @include flexVeriAverage;
+                @include flexCenterHori;
+            }
+        }
+    }
+    .home-wrapper-content {
+        font-family: 'SourceHanSerifCN-Medium-6';
+        @include flexAuto;
+        height: 100%;
+        background-color: #f0f3f3;
+        .page-view {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: auto;
+            padding: 20px;
+        }
+    }
+    .init-dialog-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin-top: -70px;
+        .init-dialog-content {
+            height: 300px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 8px #cacaca;
+            background: #fafafa;
+            padding: 30px 50px
+        }
+    }
+}
